@@ -18,7 +18,7 @@ class CardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        cardInitialCenter = profileImageView.center
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,24 +27,38 @@ class CardsViewController: UIViewController {
     }
     
     @IBAction func onPanGesture(_ sender: UIPanGestureRecognizer) {
-        let location = sender.location(in: view)
-        let velocity = sender.velocity(in: view)
         let translation = sender.translation(in: view)
+    
         if sender.state == .began {
-            NSLog("Sender state began")
-            cardInitialCenter = profileImageView.center
-            NSLog("\(cardInitialCenter)")
+            NSLog("Gesture began")
         } else if sender.state == .changed {
-            NSLog("Sender state changed")
-            if velocity.x > 0 {
+            NSLog("Gesture changed")
+            if translation.y < 0 {
+                NSLog("User swiped up")
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.profileImageView.center = CGPoint(x: self.cardInitialCenter.x, y: self.cardInitialCenter.y - 500)
+                })
+            } else if translation.x > 0 {
                 NSLog("User swiped right")
-                profileImageView.transform = CGAffineTransform(rotationAngle: CGFloat(-45 * (Double.pi/180)))
-            } else {
+                profileImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y)
+                profileImageView.transform = CGAffineTransform(rotationAngle: CGFloat(45 * (Double.pi/180)))
+            } else if translation.x < 0 {
                 NSLog("User swiped left")
+                profileImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y)
                 profileImageView.transform = CGAffineTransform(rotationAngle: CGFloat(45 * (Double.pi/180)))
             }
         } else if sender.state == .ended {
-            NSLog("Sender state ended")
+            NSLog("Gesture ended")
+            if translation.x > 50 {
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.profileImageView.center = CGPoint(x: self.cardInitialCenter.x + 500, y: 0)
+                })
+            } else if translation.x < -50 {
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.profileImageView.center = CGPoint(x: self.cardInitialCenter.x - 500, y: 0)
+                })
+            }
+            profileImageView.center = cardInitialCenter
             profileImageView.transform = CGAffineTransform.identity
         }
     }
