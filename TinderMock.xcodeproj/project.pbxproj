@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		305C639D2187C4D900F778AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C639C2187C4D900F778AA /* AppDelegate.swift */; };
-		305C639F2187C4D900F778AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C639E2187C4D900F778AA /* ViewController.swift */; };
 		305C63A22187C4D900F778AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305C63A02187C4D900F778AA /* Main.storyboard */; };
 		305C63A42187C4DB00F778AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305C63A32187C4DB00F778AA /* Assets.xcassets */; };
 		305C63A72187C4DB00F778AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305C63A52187C4DB00F778AA /* LaunchScreen.storyboard */; };
 		305C63B22187C4DB00F778AA /* TinderMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C63B12187C4DB00F778AA /* TinderMockTests.swift */; };
 		305C63BD2187C4DB00F778AA /* TinderMockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C63BC2187C4DB00F778AA /* TinderMockUITests.swift */; };
+		305C63CC2187C61600F778AA /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C63CB2187C61600F778AA /* CardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		305C63992187C4D900F778AA /* TinderMock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderMock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305C639C2187C4D900F778AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		305C639E2187C4D900F778AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		305C63A12187C4D900F778AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		305C63A32187C4DB00F778AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		305C63A62187C4DB00F778AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		305C63B82187C4DB00F778AA /* TinderMockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderMockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		305C63BC2187C4DB00F778AA /* TinderMockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderMockUITests.swift; sourceTree = "<group>"; };
 		305C63BE2187C4DB00F778AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		305C63CB2187C61600F778AA /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		305C639B2187C4D900F778AA /* TinderMock */ = {
 			isa = PBXGroup;
 			children = (
+				305C63CA2187C5ED00F778AA /* ViewControllers */,
 				305C639C2187C4D900F778AA /* AppDelegate.swift */,
-				305C639E2187C4D900F778AA /* ViewController.swift */,
 				305C63A02187C4D900F778AA /* Main.storyboard */,
 				305C63A32187C4DB00F778AA /* Assets.xcassets */,
 				305C63A52187C4DB00F778AA /* LaunchScreen.storyboard */,
@@ -123,6 +123,14 @@
 				305C63BE2187C4DB00F778AA /* Info.plist */,
 			);
 			path = TinderMockUITests;
+			sourceTree = "<group>";
+		};
+		305C63CA2187C5ED00F778AA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				305C63CB2187C61600F778AA /* CardsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				305C639F2187C4D900F778AA /* ViewController.swift in Sources */,
+				305C63CC2187C61600F778AA /* CardsViewController.swift in Sources */,
 				305C639D2187C4D900F778AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
