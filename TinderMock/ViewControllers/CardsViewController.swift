@@ -26,6 +26,10 @@ class CardsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onTapGesture(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "onTapSegue", sender: self)
+    }
+    
     @IBAction func onPanGesture(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
     
@@ -63,14 +67,13 @@ class CardsViewController: UIViewController {
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let profileViewController = segue.destination as! ProfileViewController
+        profileViewController.profileImage = profileImageView.image
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }
